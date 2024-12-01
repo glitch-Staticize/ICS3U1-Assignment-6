@@ -1,25 +1,13 @@
-<style scoped>
-.topnav {
-  background-color: #3d7b22;
-  overflow: hidden;
-}
+<script setup> 
+import { RouterLink } from 'vue-router';
+</script>
 
-.topnav b {
-  font-size: 18px;
-}
+<template>
+    <div class="header">
+        <RouterLink to="/"><img id="logo" src="../images/Relicx Pure Logo (1).png"></RouterLink>
+        <RouterLink to="/login" class="Right">Log In</RouterLink>
+        <RouterLink to="/register" class="Right">Register</RouterLink>
+    </div>
+</template>
 
-.topnav a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.topnav a:hover {
-  background-color: #1a1a1a;
-  color: #00ff00;
-}
-</style>
+<style scoped></style>

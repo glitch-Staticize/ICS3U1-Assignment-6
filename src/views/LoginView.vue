@@ -6,7 +6,7 @@ const router = useRouter();
 const password = ref('');
 
 const handleLogin = () => {
-  if (password.value === "iloveyou") {
+  if (password.value === "sinister") {
     router.push("/movies");
   } else {
     alert("Invalid Password");
@@ -18,7 +18,7 @@ const handleLogin = () => {
   <div class="hero">
     <div class="overlay">
       <div class="navbar">
-        <h1>MyFlix</h1>
+        <h1>Relicx</h1>
         <RouterLink to="/register" class="button register">Register</RouterLink>
       </div>
       <div class="form-container">
@@ -42,6 +42,7 @@ const handleLogin = () => {
   align-items: center;
   justify-content: center;
   position: relative;
+  font-family: 'Arial', sans-serif;
 }
 
 .overlay {
@@ -64,20 +65,23 @@ const handleLogin = () => {
 }
 
 .navbar h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: #24b14a;
 }
 
 .navbar .register {
-  background-color: #e50914;
+  background-color: #3d7b22;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar .register:hover {
-  background-color: #f40612;
+  background-color: #24b14a;
+  transform: scale(1.05);
 }
 
 .form-container {
@@ -88,35 +92,40 @@ const handleLogin = () => {
 .form-container h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #24b14a;
 }
 
 .input-field {
   padding: 15px;
   width: 300px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #3d7b22;
   margin-bottom: 15px;
-  transition: border-color 0.3s;
+  background-color: white;
+  color: black;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .input-field:focus {
-  border-color: #e50914;
+  border-color: #24b14a;
+  box-shadow: 0 0 8px rgba(36, 177, 74, 0.8);
   outline: none;
 }
 
 .login {
-  background-color: #e50914;
+  background-color: #3d7b22;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .login:hover {
-  background-color: #f40612;
+  background-color: #24b14a;
   transform: scale(1.05);
 }
 
