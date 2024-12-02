@@ -23,7 +23,7 @@
 <style scoped>
 .hero {
   /* Background image */
-  background-image: url('https://source.unsplash.com/random/1920x1080/?movie'); 
+  background-image: url('https://source.unsplash.com/random/1920x1080/?movie');
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -41,7 +41,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  padding: 20px; 
+  padding: 20px;
 }
 
 .navbar {
@@ -70,7 +70,7 @@
 
 .form-container {
   text-align: center;
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 
 .form-container h2 {
@@ -79,7 +79,7 @@
 }
 
 .input-field {
-  padding: 15px; 
+  padding: 15px;
   width: 300px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -88,8 +88,8 @@
 }
 
 .input-field:focus {
-  border-color: #e50914; 
-  outline: none; 
+  border-color: #e50914;
+  outline: none;
 }
 
 .register {
@@ -100,12 +100,12 @@
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s; 
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .register:hover {
   background-color: #f40612;
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 @media (max-width: 600px) {
