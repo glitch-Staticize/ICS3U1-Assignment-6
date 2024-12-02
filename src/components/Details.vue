@@ -30,45 +30,64 @@ console.log(response.data);
 
 <style scoped>
 .movie-detail {
+  margin-top: 140px;
   padding: 20px;
   color: white;
-  background-color: #141414;
+  background-color: black;
+  /* Black background for a modern look */
+  font-family: Arial, sans-serif;
+  /* Clean font choice */
 }
 
 .movie-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #e50914;
+  color: #24b14a;
+  /* Vibrant green for the title to stand out */
 }
 
 .movie-overview {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: white;
+  /* Clean and readable */
+  line-height: 1.6;
+  /* Improved readability */
 }
 
 .movie-release-date {
   font-size: 1rem;
   margin-bottom: 20px;
+  color: #4da726;
+  /* Subtle green for less prominent text */
+  font-weight: bold;
 }
 
 .movie-site {
   display: inline-block;
   margin-bottom: 20px;
   padding: 10px 15px;
-  background-color: #e50914;
+  background-color: #24b14a;
+  /* Bright green for buttons */
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 .movie-site:hover {
-  background-color: #f01212;
+  background-color: #3d7b22;
+  /* Slightly darker green on hover */
+  transform: scale(1.05);
 }
 
 .movie-poster {
   width: 25%;
   border-radius: 10px;
   margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Subtle shadow for depth */
 }
 
 .trailers-title {
@@ -76,6 +95,10 @@ console.log(response.data);
   margin-top: 40px;
   margin-bottom: 20px;
   text-align: center;
+  color: #24b14a;
+  /* Green accent for section titles */
+  text-transform: uppercase;
+  /* Adds emphasis */
 }
 
 .trailers-container {
@@ -86,19 +109,25 @@ console.log(response.data);
 }
 
 .trailer-tile {
-  background-color: #222;
+  background-color: #3d7b22;
+  /* Green background for trailer tiles */
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
   width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .trailer-tile:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  /* Enhanced hover effect */
 }
 
 .trailer-thumbnail {
   width: 100%;
   height: auto;
+  border-bottom: 3px solid #24b14a;
+  /* Green accent under thumbnail */
 }
 </style>

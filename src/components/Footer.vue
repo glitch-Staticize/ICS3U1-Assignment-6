@@ -14,7 +14,7 @@
     /* Centers content horizontally */
     align-items: center;
     /* Centers content vertically (if the footer has a height) */
-    background-color: #3d7b22;
+    background-color: #3d7b22b0;
     /* Optional: Dark green background */
     padding: 20px;
     /* Optional: Adds padding around the footer */

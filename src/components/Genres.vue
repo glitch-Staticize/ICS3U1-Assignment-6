@@ -37,15 +37,17 @@ onMounted(async () => {
 
 <style scoped>
 .movie-gallery {
+  margin-top: 140px;
   padding: 20px;
   color: white;
-  background-color: #141414;
+  background-color: black; /* Using black for a sleek background */
 }
 
 .movie-gallery h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 2.5rem;
+  color: #24b14a; /* Highlighting headers with a vibrant green */
 }
 
 .movie-list {
@@ -56,42 +58,51 @@ onMounted(async () => {
 }
 
 .movie-card {
-  background-color: #222;
+  background-color: #3d7b22; /* Subtle green for the card background */
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
   width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adding depth to cards */
 }
 
 .movie-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Enhanced hover effect */
 }
 
 .movie-poster {
   width: 100%;
   height: auto;
+  border-bottom: 3px solid #24b14a; /* Accent under the poster */
 }
 
 .movie-title {
   padding: 10px;
   text-align: center;
   font-size: 1.1rem;
-  color: #e50914;
+  color: white;
 }
 
 select {
-  background-color: #333;
+  background-color: #3d7b22;
   color: white;
   padding: 10px;
-  border: 2px solid #444;
+  border: 2px solid #24b14a;
   border-radius: 5px;
   font-size: 1rem;
   width: 200px;
   margin: 10px 0;
+  transition: border-color 0.2s;
 }
 
 select:focus {
-  border-color: #e50914;
+  border-color: white;
   outline: none;
+}
+
+select option {
+  background-color: #3d7b22;
+  color: white;
 }
 </style>
