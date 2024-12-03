@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, useRouter } from 'vue-router';
 import { ref } from 'vue';
+import Header from '../components/Header.vue';
 
 const router = useRouter();
 const password = ref('');
@@ -15,11 +16,10 @@ const handleLogin = () => {
 </script>
 
 <template>
+  <Header />
   <div class="hero">
     <div class="overlay">
       <div class="navbar">
-        <h1>Relicx</h1>
-        <RouterLink to="/register" class="button register">Register</RouterLink>
       </div>
       <div class="form-container">
         <h2>Login to Your Account</h2>
@@ -62,11 +62,6 @@ const handleLogin = () => {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-}
-
-.navbar h1 {
-  font-size: 2.5rem;
-  color: #24b14a;
 }
 
 .navbar .register {

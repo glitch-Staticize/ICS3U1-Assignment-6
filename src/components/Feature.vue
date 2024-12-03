@@ -59,8 +59,9 @@ h1 {
     justify-content: center;
     flex-wrap: wrap;
     /* Wrap movies to the next row if needed */
-    gap: 40px;
+    gap: 20px;
     /* Space between movies */
+    margin-bottom: 0;
 }
 
 .flexbox-item {
