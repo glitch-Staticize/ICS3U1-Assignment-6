@@ -10,9 +10,11 @@
       <div class="form-container">
         <h2>Create an Account</h2>
         <form>
-          <input type="text" placeholder="Name" class="input-field" required>
+          <input type="first-name" placeholder="First Name" class="input-field" required>
+          <input type="surname" placeholder="Surname" class="input-field" required>
           <input type="email" placeholder="Email" class="input-field" required>
           <input type="password" placeholder="Password" class="input-field" required>
+          <input type="confirm-password" placeholder="Confirm Password" class="input-field" required>
           <button type="submit" class="button register">Register</button>
         </form>
       </div>
