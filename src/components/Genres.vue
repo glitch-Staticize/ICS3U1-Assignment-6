@@ -41,7 +41,6 @@ onMounted(async () => {
   padding: 20px;
   color: white;
   background-color: black;
-  /* Using black for a sleek background */
 }
 
 .movie-gallery h1 {
@@ -49,7 +48,6 @@ onMounted(async () => {
   margin-bottom: 20px;
   font-size: 2.5rem;
   color: #24b14a;
-  /* Highlighting headers with a vibrant green */
 }
 
 .movie-list {
@@ -61,26 +59,22 @@ onMounted(async () => {
 
 .movie-card {
   background-color: #3d7b22;
-  /* Subtle green for the card background */
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
   width: 200px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  /* Adding depth to cards */
 }
 
 .movie-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
-  /* Enhanced hover effect */
 }
 
 .movie-poster {
   width: 100%;
   height: auto;
   border-bottom: 3px solid #24b14a;
-  /* Accent under the poster */
 }
 
 .movie-title {

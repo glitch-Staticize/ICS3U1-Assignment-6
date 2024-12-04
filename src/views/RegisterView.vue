@@ -23,7 +23,6 @@
 </template>
 
 <style scoped>
-/* Hero section */
 .hero {
   background-size: cover;
   background-position: center;
@@ -35,9 +34,8 @@
   color: white;
 }
 
-/* Overlay with dark background */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.6); /* Slightly less dark for contrast */
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   display: flex;
@@ -47,7 +45,6 @@
   padding: 30px;
 }
 
-/* Navbar styling */
 .navbar {
   width: 100%;
   display: flex;
@@ -57,16 +54,16 @@
 }
 
 #logo {
-  width: 150px; /* Adjust logo size */
+  width: 150px; 
   transition: transform 0.3s ease;
 }
 
 #logo:hover {
-  transform: scale(1.1); /* Slight hover effect for logo */
+  transform: scale(1.1); 
 }
 
 .navbar .login {
-  background-color: #24b14a; /* Primary green */
+  background-color: #24b14a;
   color: white;
   padding: 12px 24px;
   text-decoration: none;
@@ -76,11 +73,10 @@
 }
 
 .navbar .login:hover {
-  background-color: #4da726; /* Secondary green */
+  background-color: #4da726;
   transform: scale(1.05);
 }
 
-/* Form container styling */
 .form-container {
   text-align: center;
   margin-top: 40px;
@@ -108,14 +104,13 @@
 }
 
 .input-field:focus {
-  border-color: #24b14a; /* Green on focus */
-  box-shadow: 0 0 8px rgba(36, 177, 74, 0.8); /* Subtle green glow */
+  border-color: #24b14a; 
+  box-shadow: 0 0 8px rgba(36, 177, 74, 0.8); 
   outline: none;
 }
 
-/* Register button styling */
 .register {
-  background-color: #24b14a; /* Primary green */
+  background-color: #24b14a; 
   color: white;
   padding: 14px 28px;
   border: none;
@@ -127,11 +122,10 @@
 }
 
 .register:hover {
-  background-color: #4da726; /* Secondary green */
+  background-color: #4da726; 
   transform: scale(1.05);
 }
 
-/* Responsive design adjustments */
 @media (max-width: 768px) {
   .input-field {
     width: 90%;
