@@ -37,7 +37,7 @@ onMounted(async () => {
 
 <style scoped>
 .movie-gallery {
-  margin-top: 140px;
+  margin-top: 40px;
   padding: 20px;
   color: white;
   background-color: black;

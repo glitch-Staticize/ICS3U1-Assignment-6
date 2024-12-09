@@ -16,37 +16,4 @@ const store = useStore();
 </template>
 
 <style scoped>
-h1 {
-    color: #e50914;
-    text-align: center;
-}
-
-button {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 15px;
-    background-color: #e50914;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.cart {
-    display: flex;
-    flex-direction: column;
-    background-color: #141414;
-    gap: 2rem;
-    height: 100vw;
-}
-
-.item {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-img {
-    width: 10%;
-    border-radius: 5%;
-}
 </style>
