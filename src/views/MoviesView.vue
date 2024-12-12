@@ -1,5 +1,5 @@
 <script setup>
-import Header from '../components/Header.vue';
+import Cart from "../components/Cart.vue";
 import Footer from '../components/Footer.vue';
 import Genres from "../components/Genres.vue";
 import { useRouter, RouterView } from 'vue-router';
@@ -7,7 +7,6 @@ import { useStore } from '../store';
 
 const store = useStore();
 const router = useRouter();
-
 
 const genresList = [
   {
@@ -35,21 +34,17 @@ const genresList = [
 
 <template>
   <div class="movie-gallery">
-    <header class="header">
-      <h1>{{ `Hello ${store.email}!` }}</h1>
-      <button @click="router.push(`/cart`)" class="logout-button">Cart</button>
-      <button @click="router.push(`/`)" class="logout-button">Logout</button>
-    </header>
+
     <main class="movie-container">
       <RouterView />
     </main>
   </div>
+  <Cart/>
   <Genres :genres="genresList" />
   <Footer />
 </template>
 
 <style scoped>
-
 body {
   margin: 0;
   padding: 0;
@@ -62,46 +57,15 @@ body {
   flex-direction: column;
 }
 
-/* Header */
-.header {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2%;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.header h1 {
-  font-size: 24px;
-  margin: 0;
-}
-
-.logout-button {
-  background-color: #3d7b22; /* Dark Green */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.logout-button:hover {
-  background-color: #24b14a; /* Green color on hover */
-}
-
 /* Main Movie Container */
 .movie-container {
   flex-grow: 1;
-  padding: 20px;
 }
 
 /* Footer */
 footer {
-  background-color: #3d7b22; /* Dark Green */
+  background-color: #3d7b22;
+  /* Dark Green */
   color: white;
   text-align: center;
   padding: 20px;
@@ -118,7 +82,8 @@ footer {
 }
 
 .genre {
-  background-color: #24b14a; /* Green background */
+  background-color: #24b14a;
+  /* Green background */
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -128,6 +93,7 @@ footer {
 }
 
 .genre:hover {
-  background-color: #3d7b22; /* Dark Green on hover */
+  background-color: #3d7b22;
+  /* Dark Green on hover */
 }
 </style>

@@ -15,5 +15,4 @@ const store = useStore();
     </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
