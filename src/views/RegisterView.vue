@@ -5,7 +5,7 @@
     <div class="overlay">
       <div class="navbar">
         <RouterLink to="/"><img id="logo" src="../images/Relicx Pure Logo (1).png" alt="Relicx Logo"></RouterLink>
-        <a href="index.html" class="button login">Login</a>
+        <a href="login" class="button login">Login</a>
       </div>
       <div class="form-container">
         <h2>Create an Account</h2>
