@@ -4,7 +4,6 @@ import Footer from '../components/Footer.vue';
 import Genres from "../components/Genres.vue";
 import { useRouter, RouterView } from 'vue-router';
 import { useStore } from '../store';
-import LoggedInHeader from "../components/LoggedInHeader.vue";
 
 const store = useStore();
 const router = useRouter();
