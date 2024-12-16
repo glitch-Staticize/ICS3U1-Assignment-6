@@ -1,24 +1,31 @@
 <script setup>
-import { useRegistrationStore } from '../store';
+import { useStore } from '../store';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 
-const store = useRegistrationStore();
+const store = useStore();
 const router = useRouter();
 
+const firstName = ref('');
+const lastName = ref('');
+const email = ref('');
+const password = ref('');
+const rePassword = ref('');
+
 const validateForm = (event) => {
-  if (store.password !== store.rePassword) {
-    event.preventDefault();
+  event.preventDefault();
+  if (password.value !== rePassword.value) {
     alert('The passwords do not match. Please check and try again.');
   } else {
     store.setRegistrationData({
-      firstName: store.firstName,
-      lastName: store.lastName,
-      email: store.email,
-      password: store.password,
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      password: password.value,
     });
-
+    store.currentUserEmail = email.value
     router.push('/movies')
   }
 };
@@ -29,11 +36,11 @@ const validateForm = (event) => {
   <div class="form-container">
     <h2>Create an Account</h2>
     <form @submit="validateForm">
-      <input type="text" placeholder="First Name" class="input-field" v-model="store.firstName" required />
-      <input type="text" placeholder="Last Name" class="input-field" v-model="store.lastName" required />
-      <input type="email" placeholder="Email" class="input-field" v-model="store.email" required />
-      <input type="password" placeholder="Password" class="input-field" v-model="store.password" required />
-      <input type="password" placeholder="Re-Enter Password" class="input-field" v-model="store.rePassword" required />
+      <input type="text" placeholder="First Name" class="input-field" v-model="firstName" required />
+      <input type="text" placeholder="Last Name" class="input-field" v-model="lastName" required />
+      <input type="email" placeholder="Email" class="input-field" v-model="email" required />
+      <input type="password" placeholder="Password" class="input-field" v-model="password" required />
+      <input type="password" placeholder="Re-Enter Password" class="input-field" v-model="rePassword" required />
       <button type="submit" class="register">Register</button>
     </form>
   </div>

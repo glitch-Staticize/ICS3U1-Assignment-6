@@ -1,10 +1,12 @@
 <script setup>
+import LoggedInHeader from "../components/LoggedInHeader.vue";
 import { useStore } from '../store';
 
 const store = useStore();
 </script>
 
 <template>
+    <LoggedInHeader />
     <div class="cart">
         <h1>Shopping Cart</h1>
         <div class="item" v-for="([key, value]) in store.cart">

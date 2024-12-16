@@ -1,16 +1,24 @@
 <script setup>
-import { useRouter, RouterView } from 'vue-router';
+import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 import { useStore } from '../store';
 
 const store = useStore();
 const router = useRouter();
+
+const currentUserFirstName = computed(() => {
+  const userAccount = store.accounts.get(store.currentUserEmail);
+  return userAccount ? userAccount.firstName : '';
+});
+
 </script>
 
 <template>
   <header class="header">
-    <h1>{{ `Hello ${store.email}!` }}</h1>
+    <h1>{{ `Hello ${currentUserFirstName}!` }}</h1>
     <button @click="router.push(`/cart`)" class="logout-button">Cart</button>
     <button @click="router.push(`/`)" class="logout-button">Logout</button>
+    <button @click="router.push(`/settings`)" class="logout-button">Settings</button>
   </header>
 </template>
 
@@ -32,7 +40,6 @@ const router = useRouter();
 
 .logout-button {
   background-color: #3d7b22;
-  /* Dark Green */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -44,6 +51,5 @@ const router = useRouter();
 
 .logout-button:hover {
   background-color: #24b14a;
-  /* Green color on hover */
 }
 </style>

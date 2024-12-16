@@ -1,10 +1,10 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
-import { useRegistrationStore } from '../store';
+import { useStore } from '../store';
 import Header from '../components/Header.vue'
 
-const store = useRegistrationStore();
+const store = useStore();
 const email = ref('');
 const password = ref('');
 const router = useRouter();

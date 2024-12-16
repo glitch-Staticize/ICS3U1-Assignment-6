@@ -1,5 +1,5 @@
 <script setup>
-import Header from '../components/Header.vue';
+import LoggedInHeader from "../components/LoggedInHeader.vue";
 import Footer from '../components/Footer.vue';
 import { useStore } from '../store';
 import { ref, computed, onMounted } from 'vue';
@@ -15,8 +15,9 @@ const lastName = ref('');
 const email = ref('');
 
 onMounted(() => {
-  firstName.value = currentUserDetails.value.firstName || '';
-  lastName.value = currentUserDetails.value.lastName || '';
+  const user = currentUserDetails.value;
+  firstName.value = user.firstName || '';
+  lastName.value = user.lastName || '';
   email.value = store.currentUserEmail || '';
 });
 
@@ -30,13 +31,15 @@ function saveChanges() {
     store.accounts.set(store.currentUserEmail, userAccount);
 
     alert('Changes saved');
+  } else {
+    alert('User not found');
   }
 }
 </script>
 
 <template>
+  <LoggedInHeader />
   <div class="layout">
-    <Header />
     <div class="settings-container">
       <div class="settings-input">
         <h2>Settings</h2>
