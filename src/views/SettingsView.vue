@@ -1,129 +1,140 @@
 <script setup>
-import { useRegistrationStore } from '../store';
-import { computed } from 'vue';
-import Header from '../components/Header.vue'
-import Footer from '../components/Footer.vue'
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
+import { useStore } from '../store';
+import { ref, computed, onMounted } from 'vue';
 
-const userStore = useRegistrationStore();
+const store = useStore();
 
-const firstName = computed({
-  get: () => userStore.firstName,
-  set: (value) => {
-    userStore.firstName = value;
-  },
-});
-const lastName = computed({
-  get: () => userStore.lastName,
-  set: (value) => {
-    userStore.lastName = value;
-  },
-});
-const email = computed({
-  get: () => userStore.email,
-  set: (value) => {
-    userStore.email = value;
-  },
+const currentUserDetails = computed(() => {
+  return store.accounts.get(store.currentUserEmail) || {};
 });
 
-const updateProfileHandler = (event) => {
-  event.preventDefault();
-  userStore.setRegistrationData({
-    firstName: firstName.value,
-    lastName: lastName.value,
-    email: email.value,
-  });
+const firstName = ref('');
+const lastName = ref('');
+const email = ref('');
 
-  alert('Profile updated');
+onMounted(() => {
+  firstName.value = currentUserDetails.value.firstName || '';
+  lastName.value = currentUserDetails.value.lastName || '';
+  email.value = store.currentUserEmail || '';
+});
+
+function saveChanges() {
+  const userAccount = store.accounts.get(store.currentUserEmail);
+
+  if (userAccount) {
+    userAccount.firstName = firstName.value;
+    userAccount.lastName = lastName.value;
+
+    store.accounts.set(store.currentUserEmail, userAccount);
+
+    alert('Changes saved');
+  }
 }
 </script>
 
 <template>
-  <Header />
-  <div class="form-container">
-    <h1>User Profile</h1>
-    <form @submit="updateProfileHandler">
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" class="input-field" v-model="firstName" /><br /><br />
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" class="input-field" v-model="lastName" /><br /><br />
-      <label for="email">Email:</label>
-      <input type="email" id="email" class="input-field" v-model="email" readonly/><br /><br />
-      <button type="submit" class="button">Save Changes</button>
-    </form>
+  <div class="layout">
+    <Header />
+    <div class="settings-container">
+      <div class="settings-input">
+        <h2>Settings</h2>
+        <div>
+          <h4>First Name</h4>
+          <input v-model="firstName" type="text" class="input-field" required />
+        </div>
+        <div>
+          <h4>Last Name</h4>
+          <input v-model="lastName" type="text" placeholder="Last Name" class="input-field" required />
+        </div>
+        <div>
+          <h4>Email</h4>
+          <input v-model="email" type="email" placeholder="Email" class="input-field" disabled />
+        </div>
+        <button class="btn btn-primary" @click="saveChanges">Save Changes</button>
+      </div>
+    </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <style scoped>
-.form-container {
+.layout {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: 60px;
-  padding: 20px;
+  min-height: 100vh;
   background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-} 
+  color: black;
+}
 
-.form-container h1 {
-  font-size: 1.8rem;
-  color: #333;
+.settings-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #3d7b22;
+}
+
+.settings-input {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.settings-input h2 {
+  color: #3d7b22;
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
-.form-container form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 350px;
-  gap: 15px;
-} 
+.settings-input h4 {
+  color: black;
+  margin: 10px 0;
+  font-size: 16px;
+}
 
 .input-field {
   width: 100%;
-  border-radius: 5px;
-  border: 1px solid #ccc;
   padding: 10px;
-  font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
-} 
-
-.input-field:focus {
-  outline: none;
-  border-color: #24b14a;
-  box-shadow: 0 0 5px rgba(36, 177, 74, 0.5);
+  border: 1px solid #3d7b22;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: black;
 }
 
-.button {
-  background-color: rgb(81, 165, 78);
-  color: white;
+.input-field:disabled {
+  background-color: #e0e0e0;
+  color: #888;
+}
+
+.btn {
+  display: inline-block;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 4px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s;
 }
 
-.button:hover {
-  transform: scale(1.05);
+.btn-primary {
+  background-color: #24b14a;
+  color: white;
+}
+
+.btn-primary:hover {
   background-color: #3d7b22;
-} 
-
-.button:active {
-  transform: scale(1);
 }
 
-label {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #555;
-  text-align: left;
+.btn-primary:active {
+  background-color: black;
+  color: white;
 }
 </style>

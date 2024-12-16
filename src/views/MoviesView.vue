@@ -16,10 +16,10 @@ const router = useRouter();
 
     <main class="movie-container">
       <RouterView />
-      
+
     </main>
   </div>
-  <Cart/>
+  <Cart />
   <Genres :genres="genresList" />
   <Footer />
 </template>
