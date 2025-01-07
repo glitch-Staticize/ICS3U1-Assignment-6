@@ -4,10 +4,10 @@ import { ref } from 'vue';
 import { useStore } from '../store';
 import Header from '../components/Header.vue'
 
-const store = useStore();
+const store = useStore('');
 const email = ref('');
 const password = ref('');
-const router = useRouter();
+const router = useRouter('');
 
 const handleLogin = () => {
   if (email.value === store.email && password.value === store.password) {

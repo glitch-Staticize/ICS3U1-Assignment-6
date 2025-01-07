@@ -4,12 +4,11 @@ import { ref, onMounted } from 'vue';
 import { useRouter } from "vue-router";
 import { useStore } from '../store';
 
-const props = defineProps(["genres"]);
 const router = useRouter();
 const store = useStore();
-
 const selectedGenre = ref(28);
 const response = ref(null);
+const props = defineProps(["genres"]);
 
 const genres = [
   {

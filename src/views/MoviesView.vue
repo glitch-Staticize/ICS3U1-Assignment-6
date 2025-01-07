@@ -7,20 +7,41 @@ import { useStore } from '../store';
 
 const store = useStore();
 const router = useRouter();
+const props = defineProps(["genres"]);
 
-
+const genres = [
+  {
+    id: 28,
+    genreName: "Action"
+  },
+  {
+    id: 16,
+    genreName: "Animation"
+  },
+  {
+    id: 10752,
+    genreName: "War"
+  },
+  {
+    id: 878,
+    genreName: "Sci-Fi"
+  },
+  {
+    id: 36,
+    genreName: "History"
+  },
+]
 </script>
 
 <template>
   <div class="movie-gallery">
-
     <main class="movie-container">
       <RouterView />
-
     </main>
   </div>
   <LoggedInHeader />
   <Genres :genres="genresList" />
+  
   <Footer />
 </template>
 
